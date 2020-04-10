@@ -54,7 +54,7 @@ For example : items/ NPCs in different room and the effect of items
 Storing the status of the map, the positions, HP value, damage, items and other data of the player and monster.
 * Dynamic memory management:
 For each round,  the status of the map, the positions, HP value, damage, items and other data of the player and monster keeps updating. 
-File input/output (e.g., for loading/saving game status):
+* File input/output (e.g., for loading/saving game status):
 If random events occur, the game will load the file which stored the data of these events. The game progress can be saved in a file.
 * Program codes in multiple files:
 The main file is responsible for controlling events, management of user input and output of the game. The events in the game are clustered in isolated files. Also, the status should be stored in another file so that they can be called when needed.
