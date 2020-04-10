@@ -1,9 +1,16 @@
 # Mazer
 *Game Coding Project C++*
 
-# Identification of team member:
+## Team member:
 * Shum Pui Yin Bill 3035687443
 * Yeung Wing Pan Stacie 3035691004
+
+## Story Background: 
+*Once upon a time, there was a mythic monster who hunted and ate humans. Unfortunately, you are being caught. 
+“HAWWWWW…...”
+The monster is now awake. RUN…
+… Or DIE
+According to the tale your father told you, you know that there is only one exit in the maze and there are items and other people being caught in the maze, they can either help you or hurt you or kill you so focus...*
 
 # Game Rules:
 ## Maze
@@ -38,13 +45,6 @@
 * Meeting NPCs
 * Finding Bodies
 * Others
-
-# Story Background: 
-*Once upon a time, there was a mythic monster who hunted and ate humans. Unfortunately, you are being caught. 
-“HAWWWWW…...”
-The monster is now awake. RUN…
-… Or DIE
-According to the tale your father told you, you know that there is only one exit in the maze and there are items and other people being caught in the maze, they can either help you or hurt you or kill you so focus...*
 
 # Feature Implemented:
 * Generation of random game sets or events: 
