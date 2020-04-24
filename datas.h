@@ -15,8 +15,12 @@ struct status
 struct room
 {
     position pos;
+    doors    door;
+    string   type;
+    string   pass;
+};
+struct doors
+{
     int f, b, l, r;
-    string type;
-    string pass;
 };
 map<string, status> item;
