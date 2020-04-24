@@ -12,7 +12,7 @@ struct status
     position pos;
     int h, d, v;
 };
-struct room
+struct rooms
 {
     position pos;
     doors    door;
