@@ -23,4 +23,4 @@ struct doors
 {
     int f, b, l, r;
 };
-map<string, status> item;
+map<string, status> items;
