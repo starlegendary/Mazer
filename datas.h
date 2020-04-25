@@ -1,6 +1,8 @@
 #include <iostream>
 #include <map>
 #include <string>
+#include <ctime>
+#include <cstdlib>
 using namespace std;
 
 struct position
@@ -24,3 +26,5 @@ struct doors
     int f, b, l, r;
 };
 map<string, status> items;
+
+void add_door(rooms);
