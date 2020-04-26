@@ -1,9 +1,12 @@
 #include <iostream>
 #include <map>
+#include <vector>
 #include <string>
 #include <ctime>
 #include <cstdlib>
 using namespace std;
+
+int S = 5;
 
 struct position
 {
@@ -14,17 +17,26 @@ struct status
     position pos;
     int h, d, v;
 };
-struct rooms
-{
-    position pos;
-    doors    door;
-    string   type;
-    string   pass;
-};
 struct doors
 {
     int f, b, l, r;
 };
+
+struct rooms
+{
+    doors door;
+    char  type = 'N';
+    int   pass = 0;
+};
+
+
 map<string, status> items;
+vector<vector<rooms>> board(S, vector<rooms>(S)); //board of game
+
 
 void add_door(rooms);
+
+
+string blanck = "     ";
+string edge = "+";
+string wall = "-----";
