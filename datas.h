@@ -40,7 +40,7 @@ void add_door(rooms);
 void define_items();
 void random_item();
 
-
+void display(vector<vector<rooms>> board,int i, int j);
 
 string blanck = "     ";
 string edge = "+";
