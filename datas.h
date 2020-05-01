@@ -35,6 +35,9 @@ vector<vector<rooms>> board(S, vector<rooms>(S)); //board of game
 
 
 void add_door(rooms);
+void define_items();
+void random_item();
+
 
 
 string blanck = "     ";
