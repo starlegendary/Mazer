@@ -1,4 +1,5 @@
-#pragma once
+#ifndef _DATAS_H
+#define _DATAS_H
 
 #include <iostream>
 #include <map>
@@ -45,3 +46,5 @@ void display(vector<vector<rooms>> board,int i, int j);
 string blanck = "     ";
 string edge = "+";
 string wall = "-----";
+
+#endif
