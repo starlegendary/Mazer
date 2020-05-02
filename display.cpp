@@ -30,7 +30,3 @@ void three(bool sth,vector<vector<rooms>> board,int i, int j){
 void display(vector<vector<rooms>> board,int i, int j){
     three(false,board,i,j-1);three(true ,board,i,j);three(false,board,i,j+1);
 };
-int main(){
-    display(board,4,0);
-    return 0;
-}
