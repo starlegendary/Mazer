@@ -43,8 +43,9 @@ void random_item();
 
 void display(vector<vector<rooms>> board,int i, int j);
 
-string blanck = "     ";
-string edge = "+";
+string space = "     ";
+string corn = "+";
 string wall = "-----";
+string brick= "|"+space+" "+space+"|";
 
 #endif
