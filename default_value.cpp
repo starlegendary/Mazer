@@ -13,8 +13,8 @@ status MakeStatus(int x ,int y ,int h ,int d , int v){
 }
 
 void define_items(){
-  items["Accelerator-Front"] = MakeStatus(0,2,0,0,0);
-  items["Accelerator-Back"] = MakeStatus(0,-2,0,0,0);
+  items["Accelerator-Front"] = MakeStatus(0,-2,0,0,0);
+  items["Accelerator-Back"] = MakeStatus(0,2,0,0,0);
   items["Accelerator-Left"] = MakeStatus(-2,0,0,0,0);
   items["Accelerator-Right"] = MakeStatus(2,0,0,0,0);
   items["Potion(HP +5)"] = MakeStatus(0,0,5,0,0);
