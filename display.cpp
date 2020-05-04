@@ -2,6 +2,15 @@
 
 using namespace std;
 
+string space = "     ";
+string corn = "+";
+string wall = "-----";
+string brick= "|"+space+" "+space+"|";
+
+int S = 6;
+vector<vector<rooms>> board(S, vector<rooms>(S));
+
+
 void nth(){cout<<" "<< space <<" " <<space<<" ";};
 void a(bool sth, vector<vector<rooms>> board,int i, int j){
     if(sth) cout<<corn<<wall<<board[i][j].door.f<<wall<<corn; 
