@@ -7,9 +7,8 @@
 #include <string>
 #include <ctime>
 #include <cstdlib>
-using namespace std;
 
-int S = 5;
+using namespace std;
 
 struct position
 {
@@ -32,20 +31,14 @@ struct rooms
     int   pass = 0;
 };
 
-
-map<string, status> items;
-vector<vector<rooms>> board(S, vector<rooms>(S)); //board of game
-
-
-void add_door(rooms);
+void add_door(rooms&);
+void move(status& , status&);
 void define_items();
-void random_item();
+void define_player_moster();
+void display(vector<vector<rooms>>,int, int);
+string random_item(int);
+status MakeStatus(int, int, int,int,int);
 
-void display(vector<vector<rooms>> board,int i, int j);
 
-string space = "     ";
-string corn = "+";
-string wall = "-----";
-string brick= "|"+space+" "+space+"|";
 
 #endif
