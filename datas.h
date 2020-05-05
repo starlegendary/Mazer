@@ -34,7 +34,7 @@ struct rooms
 void add_door(rooms&);
 void move(status& , status&);
 void define_items();
-void define_player_moster();
+void define_player_monster();
 void display(vector<vector<rooms>>,int, int);
 string random_item(int);
 status MakeStatus(int, int, int,int,int);
