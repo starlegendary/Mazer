@@ -6,9 +6,9 @@
 using namespace std;
 
 extern status Player;
-extern status Moster;
+extern status Monster;
 extern map<string, status> items;
-map<int,string> player_items;
+vector<string> player_items;
 
 
 int main(){
@@ -16,7 +16,6 @@ int main(){
     vector<vector<rooms>> board(S, vector<rooms>(S));
     string command;
     string temp_item;
-    int num_of_item = 1;
     int nth_item;
     status front = MakeStatus(0,-1,0,0,0);
     status back = MakeStatus(0,1,0,0,0);
@@ -26,7 +25,7 @@ int main(){
     srand(time(NULL));
     int k = rand()%100;
     define_items();
-    define_player_moster();;
+    define_player_monster();;
     board[S-1][S-1].type.replace(0,1,"#");
     board[0][0].type.replace(0,1,"#");
 
@@ -48,17 +47,16 @@ int main(){
     cout << "[Some background information here.....] " << endl;
     cout << "Your Position: ("<< S-1 << "," << S-1 << ")" << endl;
     display(board,S-1,S-1);
-    cout<<"HP: "<<Player.h<<"; Damage: "<<Player.d<<"; Visibilit: "<<Player.v<<endl;
+    cout<<"HP: "<<Player.h<<"; Damage: "<<Player.d<<"; Visibility: "<<Player.v<<endl;
 
     while(!((Player.h == 0) || (Player.pos.x == 0 && Player.pos.y == 0))){
 
-      if (!(Player.pos.x == Moster.pos.x &&  Player.pos.y == Moster.pos.y )){
+      if (!(Player.pos.x == Monster.pos.x &&  Player.pos.y == Monster.pos.y )){
           if( board[Player.pos.x][Player.pos.y].item_name != "NULL"){// pick the item in the current board
             cout <<  "You pick up an item: " << board[Player.pos.x][Player.pos.y].item_name << endl;
-            player_items[num_of_item] = board[Player.pos.x][Player.pos.y].item_name;
-            num_of_item++;
+            player_items.push_back(board[Player.pos.x][Player.pos.y].item_name);
             board[Player.pos.x][Player.pos.y].item_name.replace(0,board[Player.pos.x][Player.pos.y].item_name.length(),"NULL");
-            board[Player.pos.x][Player.pos.y].item_name.replace(0,1,"N");
+            board[Player.pos.x][Player.pos.y].type.replace(0,1,"N");
           }
 
           cout << "Intput Command: " ;
@@ -66,46 +64,55 @@ int main(){
           if(command == "front"){
             if (Player.pos.y != 0){
               move(Player,front);
+              Player.h -= board[Player.pos.x][Player.pos.y].door.f;
             }else{
               cout << "********You cannot move !********" << endl;
             }
           }else if(command == "back"){
             if (Player.pos.y != S-1){
               move(Player,back);
+              Player.h -= board[Player.pos.x][Player.pos.y].door.b;
             }else{
               cout << "********You cannot move !********" << endl;
             }
           }else if(command == "left"){
             if (Player.pos.x != 0){
               move(Player,left);
+              Player.h -= board[Player.pos.x][Player.pos.y].door.l;
             }else{
               cout << "********You cannot move !********" << endl;
             }
           }else if(command == "right"){
             if (Player.pos.x != S-1){
               move(Player,right);
+              Player.h -= board[Player.pos.x][Player.pos.y].door.r;
             }else{
               cout << "********You cannot move !********" << endl;
             }
           }else if(command == "use"){
-            // check the exist of item
+
             cin >> nth_item;
-            move(Player,items[player_items[nth_item]]);
-            // del the item from the player item list
+            if (nth_item <= player_items.size() && nth_item > 0){// check the exist of item
+              cout<< "You used the item"<<endl;
+              move(Player,items[player_items[nth_item-1]]);
+              player_items.erase(player_items.begin()+nth_item-1);
+            }else{
+              cout << "********You cannot use it !********" << endl;
+            }
           }
 
       }else{
 
-        //fighting with moster
+        //fighting with monster
       }
       cout << "Your items: " << endl;
-      for(auto it = player_items.cbegin(); it != player_items.cend(); ++it)
+      for(int i = 0; i < player_items.size(); i++)
       {
-        cout << it->first <<" "<< it->second << endl;
+        cout << i+1 <<" "<< player_items[i] << endl;
       }
       cout << "Your Position: (" << Player.pos.x <<","<<Player.pos.y<<")"<< endl;
       display(board,Player.pos.x,Player.pos.y);
-      cout<<"HP: "<<Player.h<<"; Damage: "<<Player.d<<"; Visibilit: "<<Player.v<<endl;
+      cout<<"HP: "<<Player.h<<"; Damage: "<<Player.d<<"; Visibility: "<<Player.v<<endl;
 
     }
     if (Player.h == 0){
