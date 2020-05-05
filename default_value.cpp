@@ -1,6 +1,6 @@
 #include "datas.h"
 status Player;
-status Moster;
+status Monster;
 map<string, status> items;
 status MakeStatus(int x ,int y ,int h ,int d , int v){
   status c ;
@@ -27,9 +27,9 @@ void define_items(){
   items["NULL"] = MakeStatus(0,0,0,0,0);
 }
 
-void define_player_moster(){
+void define_player_monster(){
   Player = MakeStatus(5,5,50,5,1);
-  Moster = MakeStatus(0,0,200,10,6);
+  Monster = MakeStatus(0,0,200,10,6);
 
 }
 
