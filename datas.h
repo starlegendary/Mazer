@@ -47,6 +47,10 @@ bool check(status,string,int);
 void use_item(status&,int);
 void pick_item(vector<vector<rooms>>&,status&);
 void display(vector<vector<rooms>>,int, int,int);
+void fight_with_monster(vector<vector<rooms>>,status&,status&,int);
+int distance(status,status);
+void Visibility(status,status);
+
 
 
 
@@ -100,6 +104,10 @@ bool check(status,string,int);
 void use_item(status&,int);
 void pick_item(vector<vector<rooms>>&,status&);
 void display(vector<vector<rooms>>,int, int,int);
+void fight_with_monster(vector<vector<rooms>>,status&,status&,int);
+int distance(status,status);
+void Visibility(status,status);
+
 
 
 
