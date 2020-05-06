@@ -32,7 +32,7 @@ int main(){
     vector<vector<rooms>> board(S, vector<rooms>(S));
 
     define_items();
-    define_player_monster(S);
+    define_player_monster(S);;
     board[S-1][S-1].type.replace(0,1,"#");
     board[0][0].type.replace(0,1,"#");
 
@@ -41,7 +41,7 @@ int main(){
 
     Print_info(board,S,Player);
 
-    while(!((Player.h == 0) || (Player.pos.x == 0 && Player.pos.y == 0))){
+    while(!((Player.h <= 0) || (Player.pos.x == 0 && Player.pos.y == 0)) && Monster.h > 0){
 
       if (!(Player.pos.x == Monster.pos.x &&  Player.pos.y == Monster.pos.y )){
 
@@ -68,16 +68,16 @@ int main(){
           }else if(command == "use"){
                 use_item(Player,S);
           }
+          Visibility(Monster,Player);
+          Print_info(board,S,Player);
 
       }else{
 
-        //fighting with monster
+        fight_with_monster(board,Monster,Player,S);
       }
-
-      Print_info(board,S,Player);
-
     }
-    if (Player.h == 0){
+
+    if (Player.h <= 0){
       cout << "----------------------------------------------------" << endl;
       cout << "|                     You lose!                    |" << endl;
       cout << "----------------------------------------------------" << endl;
