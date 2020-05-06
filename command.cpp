@@ -109,7 +109,7 @@ void Visibility(status Monster,status Player){
   if (distance(Monster,Player) <= 4){
     cout << "|                     ROAR!!!!!                    |" << endl;
     cout << "----------------------------------------------------" << endl;
-    cout << "|          You hear the roar of Monster!          |" << endl;
+    cout << "|          You hear the roar of Monster!           |" << endl;
     cout << "----------------------------------------------------" << endl;
     cout << "|        Be careful !  Monster is nearby !!!       |" << endl;
     cout << "----------------------------------------------------" << endl;
