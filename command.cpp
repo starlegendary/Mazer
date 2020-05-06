@@ -96,3 +96,43 @@ void pick_item(vector<vector<rooms>>& board,status& Player){
     board[Player.pos.x][Player.pos.y].type.replace(0,1,"N");
   }
 }
+
+int distance(status Monster,status Player){
+  int x,y;
+  x = (Monster.pos.x-Player.pos.x)*(Monster.pos.x-Player.pos.x);
+  y = (Monster.pos.y-Player.pos.y)*(Monster.pos.y-Player.pos.y);
+  return x+y;
+}
+
+void Visibility(status Monster,status Player){
+  cout << "----------------------------------------------------" << endl;
+  if (distance(Monster,Player) <= 4){
+    cout << "|                     ROAR!!!!!                    |" << endl;
+    cout << "----------------------------------------------------" << endl;
+    cout << "|          You hear the roar of Monster!          |" << endl;
+    cout << "----------------------------------------------------" << endl;
+    cout << "|        Be careful !  Monster is nearby !!!       |" << endl;
+    cout << "----------------------------------------------------" << endl;
+  }else if(Player.v >= 2 &&  distance(Monster,Player) <= 16){
+    cout << "|                 Thud...Thud...                   |" << endl;
+    cout << "----------------------------------------------------" << endl;
+    cout << "|          You hear the step of Monster!           |" << endl;
+    cout << "----------------------------------------------------" << endl;
+    cout << "|           Monster is closing to you.             |" << endl;
+    cout << "----------------------------------------------------" << endl;
+  }else if(Player.v >=3 && distance(Monster,Player) <= 32){
+    cout << "|                 Fizz...Fizz...                   |" << endl;
+    cout << "----------------------------------------------------" << endl;
+    cout << "|    You hear a little noise from the Monster      |" << endl;
+    cout << "----------------------------------------------------" << endl;
+    cout << "|           Monster is still away from you.        |" << endl;
+    cout << "----------------------------------------------------" << endl;
+  }else{
+    cout << "|                       ...                        |" << endl;
+    cout << "----------------------------------------------------" << endl;
+    cout << "|         You hear nothing, it is quiet...         |" << endl;
+    cout << "----------------------------------------------------" << endl;
+    cout << "|         Hope that Monster is not nerby           |" << endl;
+    cout << "----------------------------------------------------" << endl;
+  }
+}
