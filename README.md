@@ -15,7 +15,7 @@ According to the tale your father told you, you know that there is only one exit
 # Game Rules:
 ## Maze
 * A N-maze is formed by N^2 number of rooms
-* Each room has 1-4 door(s).
+* Each room has 4 doors.
 * Each room includes random items and events
 * Door - allow use to go from one room to another
 * Starting room - initial position of player
