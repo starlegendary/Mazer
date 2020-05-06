@@ -11,7 +11,7 @@ void move(status& player, status& item){
 }
 
 void Print_info(vector<vector<rooms>> board,int S, status& Player){
-
+  cout << "----------------------------------------------------" << endl;
   cout << "Your items: " << endl;
   for(int i = 0; i < player_items.size(); i++)
   {
