@@ -29,9 +29,9 @@ void define_items(){
 }
 
 void define_player_monster(int S){
-  Player = MakeStatus(S-1,S-1,50,5,1);
-  Monster = MakeStatus(0,0,200,10,6);
-
+  srand(time(NULL));
+  Player = MakeStatus(S-1,S-1,S*4,S,1);
+  Monster = MakeStatus(rand()%(S-1)+1,rand()%(S-1)+1,S*16,S*2,0);
 }
 
 string random_item(int k){
