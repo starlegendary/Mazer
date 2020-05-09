@@ -2,6 +2,16 @@
 
 vector<string> player_items;
 extern map<string, status> items;
+
+void print(string sth, bool okk)
+{
+    cout<<sth; if(okk) cout<<endl;
+}
+void enter()
+{
+    cout << "Press Enter to Continue." <<endl;cin.ignore();
+}
+
 void move(status& player, status& item){
   player.pos.x += item.pos.x;
   player.pos.y += item.pos.y;
