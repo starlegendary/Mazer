@@ -1,9 +1,7 @@
-#include <iostream>
-#include <map>
-#include <string>
 #include "datas.h"
 
 using namespace std;
+
 int lol(int a){if(a==0)return -1; else return a;}
 position dis(position a, position b)
 {
