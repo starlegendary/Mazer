@@ -24,7 +24,7 @@ int main(){
     cout << "[Some background information here.....] " << endl;
 
     int S,x,y;
-    bool count = 0;
+    int count = 0;
     
     a_sec();
     cout << "Input the size of the maze: ";
@@ -59,20 +59,22 @@ int main(){
 
 
           if(command == "front"){
-                count = 1;
+                count += 1;
                 x=Player.pos.x;y=Player.pos.y;
                 move_and_loseHP(Player,front,board[Player.pos.x][Player.pos.y].door.f,0,Player.pos.y);
                 board[x][y].door.f = 0;
           }else if(command == "back"){
+                count += 1;
                 x=Player.pos.x;y=Player.pos.y;
                 move_and_loseHP(Player,back,board[Player.pos.x][Player.pos.y].door.b,S-1,Player.pos.y);
                 board[x][y].door.b = 0;
           }else if(command == "left"){
-                count = 1;
+                count += 1;
                 x=Player.pos.x;y=Player.pos.y;
                 move_and_loseHP(Player,left,board[Player.pos.x][Player.pos.y].door.l,0,Player.pos.x);
                 board[x][y].door.l = 0;
           }else if(command == "right"){
+                count += 1;
                 x=Player.pos.x;y=Player.pos.y;
                 move_and_loseHP(Player,right,board[Player.pos.x][Player.pos.y].door.r,S-1,Player.pos.x);
                 board[x][y].door.r = 0;
@@ -90,7 +92,6 @@ int main(){
           
           if (count == 1){
               b_sec(" hp is reduced ahhh ");
-              cound = 0;
           }
           if( !(Monster.pos.x == Player.pos.x && Monster.pos.y == Player.pos.y) ){Visibility(Monster,Player);}
           board[S-1][S-1].type.replace(0,1,"#");
