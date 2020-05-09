@@ -60,16 +60,23 @@ According to the tale your father told you, you know that there is only one exit
 
 
 # Feature Implemented:
+
 * Generation of random game sets or events: 
-Random events may occur which can affect the player’s status. 
-For example : items/ NPCs in different room and the effect of items
+Random items are placed in each room and random door values(reduce the HP of player) are marked in each room.
+Relevant function: random_item(int) , add_door(rooms& ,int), setup_doors_items(vector<vector<rooms>>&,int).
+  
 * Data structures for storing game status:
 Storing the status of the map, the positions, HP value, damage, items and other data of the player and monster.
+
 * Dynamic memory management:
 For each round,  the status of the map, the positions, HP value, damage, items and other data of the player and monster keeps updating. 
+
 * File input/output (e.g., for loading/saving game status):
-If random events occur, the game will load the file which stored the data of these events. The game progress can be saved in a file.
+If items are used, the game will load the file which stored the function of controlling items.
+
 * Program codes in multiple files:
-The main file is responsible for controlling events, management of user input and output of the game. The events in the game are clustered in isolated files. Also, the status should be stored in another file so that they can be called when needed.
+The main file is responsible for controlling game, management of user input and output of the game. 
+How to use items, fighting process with monster and the movement of player in the game are clustered in isolated files. 
+
 * Proper indentation and naming styles
 * In-code documentation
