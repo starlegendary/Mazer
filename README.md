@@ -1,4 +1,4 @@
-# Mazerss
+# Mazer
 *Game Coding Project C++*
 
 ## Team member:
@@ -17,41 +17,47 @@ According to the tale your father told you, you know that there is only one exit
 * Monster chases the player.
 * If Monster caught the player(same room as player), the player fight with it.
 * If the player is not dead (health <= 0), the player return the initial position (Starting Room).
+* If player want to move to next room, the HP of player will be reduced.
+* The amount of player's HP reduced is the number which is marked in each door.
 * The player can increase the personal status through different items in different room.
 
 # Game Element:
 ## Maze
 * A N-maze is formed by N^2 number of rooms
 * Each room has 4 doors.
-* Each room includes random items and events
+* Each room includes random items.
 * Door - allow use to go from one room to another
 * Starting room - initial position of player
 * Ending room - the exit of the maze
 
-## Knight (controlled by player)
-* Goal -  Find the exit out of the maze
-* Health (HP)  - if this value is equal to zero, game over.
-* Damage (D)  - zero
-* Move (M) (-1 HP) 
-  * Walk (-1HP) - move to another room 
-  * Get Item  (-1 HP) - get the item in the room
-  * Use Item (-1 HP) - use the item in the room
+## Player
+* Goal -  Escape from the maze or kill the monster
+* Health (HP) - Default: S x 4 ( S = size of map). if this value is equal to zero, game over.
+* Damage - equal to the size of map.
+* Visibility - euqal to 1.
+* Walk - move to another room.
+* Use Item  - use the item which can change the personal status.
 
 ## Monster
-* Goal - Catch the knight
-* Health (HP) - infinite
-* Damage (D) - infinite
-* Move (M) (-1 HP) - can only move 1 space a round (shortest path algorithm)
+* Goal - Catch the Player
+* Health Point -  equal to S x 16 ( S = size of map).
+* Damage - equal to  S x 2 ( S = size of map).
+* Visibility - can only move 1 space a round (shortest path algorithm)
 
 ## Items
-* Magic Detector - show the distance between the player and the monster
-* Food - distract the monster from given position
-* Others
+* Accelerator-Front
+* Accelerator-Back
+* Accelerator-Left
+* Accelerator-Right
+* Potion(HP +5)
+* Bandage(HP +5)
+* Potion(HP +10)
+* First Aid Kit(HP +10)
+* Knife(DMG +10)
+* Sword(DMG +20)
+* Detector(V +1)
+* NULL
 
-## Events:
-* Meeting NPCs
-* Finding Bodies
-* Others
 
 # Feature Implemented:
 * Generation of random game sets or events: 
