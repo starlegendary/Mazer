@@ -45,10 +45,9 @@ int main(){
 
           pick_item(board,Player);
 
-          cout << "Intput Command: " ;
+          cout << "Intput Command Below (front/ left/ right/ back/ use +item number): " <<endl;
           cin >> command;
-          cout << "----------------------------------------------------" << endl;
-          cout << "----------------------------------------------------" << endl;
+          a_sec(); a_sec();
 
 
           if(command == "front"){
@@ -74,14 +73,11 @@ int main(){
     }
 
     if (Player.h <= 0){
-      cout << "----------------------------------------------------" << endl;
-      cout << "|                     You lose!                    |" << endl;
-      cout << "----------------------------------------------------" << endl;
+      a_sec();
+      b_sec("You lose!");
     }else if (Player.pos.x == 0 && Player.pos.y == 0){
-      cout << "----------------------------------------------------" << endl;
-      cout << "|                     You win !                    |" << endl;
-      cout << "----------------------------------------------------" << endl;
+      a_sec();
+      b_sec("You win !");
     }
-
     return 0;
 }
