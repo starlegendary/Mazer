@@ -81,6 +81,7 @@ int main(){
           srand(time(NULL));
           for ( int r = rand() % 3 ; r > 0 ; r--){
             Monster.pos = movement(Monster.pos,Player.pos);
+            Monster.h -= 4;
           }
           if( !(Monster.pos.x == Player.pos.x && Monster.pos.y == Player.pos.y) ){Visibility(Monster,Player);}
           board[S-1][S-1].type.replace(0,1,"#");
