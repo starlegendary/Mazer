@@ -11,7 +11,7 @@ position dis(position a, position b)
     sth.x = a.x - b.x;
     sth.y = a.y - b.y;
     return sth;
-};
+}
 int sqsum(position sth)
 { 
     return sth.x*sth.x+sth.y*sth.y; 
@@ -28,7 +28,7 @@ position movement(position a, position b)
         {
             sth = newpos;
             diss = sqsum(newpos);
-        };
-    };
+        }
+    }
     return sth;
-};
+}
