@@ -1,20 +1,22 @@
+FLAGS = -pedantic-errors -std=c++11
+
 movement.o: movement.cpp datas.h
-  g++ movement.cpp -c movement.o
+  g++ $(FLAGS) movement.cpp -c movement.o
   
 display.o: display.cpp datas.h
-  g++ display.cpp -c display.o
+  g++ $(FLAGS) display.cpp -c display.o
   
-fight.o: fighting.cpp datas.h
-  g++ fighting.cpp -c fighting.o
+fighting.o: fighting.cpp datas.h
+  g++ $(FLAGS) fighting.cpp -c fighting.o
 
 command.o: command.cpp datas.h
-  g++ command.cpp -c command.o
+  g++ $(FLAGS) command.cpp -c command.o
   
 default_value.o: default_value.cpp datas.h 
-  g++ default_value.cpp -c default_value.o
+  g++ $(FLAGS) default_value.cpp -c default_value.o
   
 main: main.cpp fighting.o command.o default_value.o movement.o display.o datas.h
-  g++ main.cpp fighting.o command.o default_value.o movement.o display.o-o main
+  g++ $(FLAGS) main.cpp fighting.o command.o default_value.o movement.o display.o-o main
   
 clean:
   rm *.o main
