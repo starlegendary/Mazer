@@ -45,7 +45,7 @@ int main(){
 
           pick_item(board,Player);
 
-          cout << "Intput Command Below (front/ left/ right/ back/ use +item number): " <<endl;
+          cout << "Intput Command Below (front/ left/ right/ back/ use + item no. ): " <<endl;
           cin >> command;
           a_sec(); a_sec();
 
