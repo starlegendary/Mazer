@@ -36,6 +36,7 @@ int main(){
     setup_doors_items(board,S);
     board[Player.pos.x][Player.pos.y].type.replace(0,1,"@");
     Print_info(board,S,Player);
+
     board[S-1][S-1].type.replace(0,1,"#");
     board[0][0].type.replace(0,1,"#");
 
@@ -64,10 +65,20 @@ int main(){
 
           }else if(command == "use"){
                 use_item(Player,S);
+          }else{
+                b_sec("Invalid !!");
           }
-          Visibility(Monster,Player);
+
+          srand(time(NULL));
+          for ( int r = rand() % 2 ; r >= 0 ; r--){
+            Monster.pos = movement(Monster.pos,Player.pos);
+          }
+          if( !(Monster.pos.x == Player.pos.x && Monster.pos.y == Player.pos.y) ){Visibility(Monster,Player);}
+          board[S-1][S-1].type.replace(0,1,"#");
+          board[0][0].type.replace(0,1,"#");
           board[Player.pos.x][Player.pos.y].type.replace(0,1,"@");
           Print_info(board,S,Player);
+
       }else{
         fight_with_monster(board,Monster,Player,S);
       }
