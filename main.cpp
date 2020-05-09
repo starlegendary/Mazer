@@ -33,6 +33,7 @@ int main(){
       cout << "Input the size of the maze: ";
       cin >> S;
     }
+    a_sec();
     
     vector<vector<rooms>> board(S, vector<rooms>(S));
 
