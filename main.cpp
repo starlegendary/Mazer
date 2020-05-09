@@ -31,6 +31,7 @@ int main(){
       cout << "Input the size of the maze: ";
       cin >> S;
     }
+    
     vector<vector<rooms>> board(S, vector<rooms>(S));
 
     define_items();
