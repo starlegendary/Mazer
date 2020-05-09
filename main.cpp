@@ -75,7 +75,7 @@ int main(){
           }
 
           srand(time(NULL));
-          for ( int r = rand() % 3 ; r >= 0 ; r--){
+          for ( int r = rand() % 3 ; r > 0 ; r--){
             Monster.pos = movement(Monster.pos,Player.pos);
           }
           if( !(Monster.pos.x == Player.pos.x && Monster.pos.y == Player.pos.y) ){Visibility(Monster,Player);}
