@@ -83,6 +83,7 @@ int main(){
           board[0][0].type.replace(0,1,"#");
           board[Player.pos.x][Player.pos.y].type.replace(0,1,"@");
           Print_info(board,S,Player);
+          board[Player.pos.x][Player.pos.y].type.replace(0,1," ");
 
       }else{
         fight_with_monster(board,Monster,Player,S);
