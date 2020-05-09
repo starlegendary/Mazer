@@ -59,7 +59,10 @@ int main(){
     print("you can use them by using the command 'use' following the item number.", true); enter();
     print("At last... RMB!!!!", true); enter();
     print("Once your HP deduct to zero...... you are dead.", true); enter();
-    
+ 
+    cout << "****************************************************" << endl;
+    cout << "*                   Start Playing!!!               *" << endl;
+    cout << "****************************************************" << endl <<endl;
     player_items.clear();
     setup_doors_items(board,S);
     board[Player.pos.x][Player.pos.y].type.replace(0,1,"@");
