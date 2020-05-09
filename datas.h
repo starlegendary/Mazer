@@ -41,6 +41,8 @@ void define_player_monster(int);
 
 status MakeStatus(int, int, int,int,int);
 void Print_info(vector<vector<rooms>>,int, status&);
+
+void three(bool,vector<vector<rooms>>,int , int, int);
 void display(vector<vector<rooms>>,int, int,int);
 
 void setup_doors_items(vector<vector<rooms>>& ,int);
