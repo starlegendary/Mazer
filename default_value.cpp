@@ -21,6 +21,7 @@ void define_items(){
   items["Potion(HP +5)"] = MakeStatus(0,0,5,0,0);
   items["Bandage(HP +5)"] = MakeStatus(0,0,5,0,0);
   items["Potion(HP +10)"] = MakeStatus(0,0,10,0,0);
+  items["First Aid Kit(HP +10)"] = MakeStatus(0,0,10,0,0);
   items["Knife(DMG +10)"] = MakeStatus(0,0,0,10,0);
   items["Sword(DMG +20)"] = MakeStatus(0,0,0,20,0);
   items["Detector(V +1)"] = MakeStatus(0,0,0,0,1);
