@@ -75,7 +75,7 @@ int main(){
           }else if(command == "use"){
                 use_item(Player,S);
           }else{
-                b_sec("Invalid !!");
+                b_sec("HAHAHA!!! You just waste a round man.");
           }
 
           srand(time(NULL));
