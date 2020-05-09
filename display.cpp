@@ -6,16 +6,16 @@ string space = "     ";
 string corn = "+";
 string wall = "-----";
 string brick= "|"+space+" "+space+"|";
-void a_sec(){cout << "----------------------------------------------------" << endl;};
+void a_sec(){cout << "----------------------------------------------------" << endl;}
 void spacing(int time){
   for(int i = 0; i < time; i++){cout << " ";}
-};
+}
 void b_sec(string sth){
     int half = 25 - sth.length()/2;
     cout << "|";
     spacing(half); cout<<sth; spacing(half - sth.length()%2);
     cout << "|"<<endl; a_sec();
-};
+}
 void nth(){cout<<" "<< space
 <<" " <<space<<" ";}
 void a(bool sth, vector<vector<rooms>> board,int i, int j){
