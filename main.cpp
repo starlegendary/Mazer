@@ -23,7 +23,7 @@ int main(){
     cout << "****************************************************" << endl <<endl;
     cout << "[Some background information here.....] " << endl;
 
-    int S ;
+    int S,x,y;
     a_sec();
     cout << "Input the size of the maze: ";
     cin >> S;
