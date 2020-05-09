@@ -13,6 +13,13 @@ The monster is now awake. RUN…
 According to the tale your father told you, you know that there is only one exit in the maze and there are items and other people being caught in the maze, they can either help you or hurt you or kill you so focus...*
 
 # Game Rules:
+* Player needs to escape from the maze or kill the monster t win the game.
+* Monster chases the player.
+* If Monster caught the player(same room as player), the player fight with it.
+* If the player is not dead (health <= 0), the player return the initial position
+* The player can increase the personal status through different items in different room.
+
+# Game Element:
 ## Maze
 * A N-maze is formed by N^2 number of rooms
 * Each room has 4 doors.
