@@ -24,6 +24,8 @@ int main(){
     cout << "[Some background information here.....] " << endl;
 
     int S,x,y;
+    bool count = 0;
+    
     a_sec();
     cout << "Input the size of the maze: ";
     cin >> S;
@@ -57,6 +59,7 @@ int main(){
 
 
           if(command == "front"){
+                count = 1;
                 x=Player.pos.x;y=Player.pos.y;
                 move_and_loseHP(Player,front,board[Player.pos.x][Player.pos.y].door.f,0,Player.pos.y);
                 board[x][y].door.f = 0;
@@ -65,6 +68,7 @@ int main(){
                 move_and_loseHP(Player,back,board[Player.pos.x][Player.pos.y].door.b,S-1,Player.pos.y);
                 board[x][y].door.b = 0;
           }else if(command == "left"){
+                count = 1;
                 x=Player.pos.x;y=Player.pos.y;
                 move_and_loseHP(Player,left,board[Player.pos.x][Player.pos.y].door.l,0,Player.pos.x);
                 board[x][y].door.l = 0;
@@ -82,6 +86,11 @@ int main(){
           for ( int r = rand() % 2 ; r > 0 ; r--){
             Monster.pos = movement(Monster.pos,Player.pos);
             Monster.h -= 4;
+          }
+          
+          if (count == 1){
+              b_sec(" hp is reduced ahhh ");
+              cound = 0;
           }
           if( !(Monster.pos.x == Player.pos.x && Monster.pos.y == Player.pos.y) ){Visibility(Monster,Player);}
           board[S-1][S-1].type.replace(0,1,"#");
