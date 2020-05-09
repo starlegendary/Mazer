@@ -33,17 +33,25 @@ int main(){
       cin >> S;
     }
     a_sec();
-    print("Stars, hide your fires; Let not light see my black and deep desires. -- William Shakespea", true); enter();
-    print("You wake up... there is nothing but darkness.", true); enter();
-    print("'This is the maze.' You hear a voice.", true); enter();
-    print("'Escape or kill the monster' The voice continues.", true); enter();
-    print("'This damn wall must be talking cause man I can hear them.' You think to yourself.", true); enter();
-    print("'You struggle to stand up... Your journey start here.", true); enter();
+
     vector<vector<rooms>> board(S, vector<rooms>(S));
 
     define_items();
     define_player_monster(S);
-
+    
+    print("Stars, hide your fires; Let not light see my black and deep desires. -- William Shakespea", true); enter();
+    print("You wake up... there is nothing but darkness.", true);enter();
+    print("'This is the maze.' You hear a voice.", true); enter();
+    print("'Escape or Kill the monster' The voice continues.", true); enter();
+    print("'This damn wall must be talking cause man I can hear them.' You think to yourself.", true); enter();
+    print("You struggle to stand up... You look at the room around you.", true); enter();
+    three(false ,board,Player.pos.x,Player.pos.y,S);
+    print("This is your room. The 4 numbers are the value of the door", true);enter();
+    print("These are the other rooms adjacent to you.", true); enter();
+    display(board,Player.pos.x,Player.pos.y,S);
+    print("When you move from a room to another, the number on the door on that direction with deduct your HP.", true); enter();
+    print("When your HP deduct to zero... you will be dead.", true); enter();
+    
     player_items.clear();
     setup_doors_items(board,S);
     board[Player.pos.x][Player.pos.y].type.replace(0,1,"@");
