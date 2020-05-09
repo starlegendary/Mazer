@@ -9,6 +9,7 @@ void fight_with_monster(vector<vector<rooms>> board,status& Monster,status& Play
   cin >> c;
   while ( true ){
     if ( c == "1" ){
+      cin.get();
       a_sec();
       b_sec("        You attack the Monster !!        ");
 
