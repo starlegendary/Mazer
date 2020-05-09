@@ -91,7 +91,7 @@ void use_item(status& Player,int S){
         a_sec();
       }
   }else{
-    cout << "[WARNING][WARNING]Item Not Exist ![WARNING][WARNING]" << endl;
+    cout << "Item Not Exist !HAHAHA!!! You just waste a round man." << endl;
     a_sec();
   }
 
