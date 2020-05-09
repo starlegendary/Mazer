@@ -49,8 +49,16 @@ int main(){
     print("This is your room. The 4 numbers are the value of the door", true);enter();
     print("These are the other rooms adjacent to you.", true); enter();
     display(board,Player.pos.x,Player.pos.y,S);
-    print("When you move from a room to another, the number on the door on that direction with deduct your HP.", true); enter();
-    print("When your HP deduct to zero... you will be dead.", true); enter();
+    print("You control your character with (front/ left/ right/ back).", true); enter();
+    print("When you move from a room to another, the number on the door(the one in your current room) of that direction will deduct to 0.", true); enter();
+    print("It will also deduct your HP (also apply to the monster).", true); enter();
+    Print_info(board,S,Player);
+    print("And once your HP deduct to zero...... you will be dead. You can check your HP and other status above.", true); enter();
+    print("The second line will be the item that you picked in that round; each room will have 0 or 1 item.", true); enter();
+    print("You can see all of your item and correspond item no. in the item list.", true); enter();
+    print("you can use them by using the command 'use' following the item number.", true); enter();
+    print("At last... RMB!!!!", true); enter();
+    print("Once your HP deduct to zero...... you are dead.", true); enter();
     
     player_items.clear();
     setup_doors_items(board,S);
