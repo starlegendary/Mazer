@@ -9,14 +9,13 @@ void fight_with_monster(vector<vector<rooms>> board,status& Monster,status& Play
   cin >> c;
   while ( true ){
     if ( c == "1" ){
-      cin.get();
       a_sec();
       b_sec("        You attack the Monster !!        ");
 
       cout << " HP of Monster: "<< Monster.h <<" - "<< Player.d;
       Monster.h -= Player.d;
       cout <<  " = " <<  Monster.h << endl;
-      cin.get();
+      enter();
 
       if (Monster.h <= 0){
         a_sec();
@@ -33,7 +32,7 @@ void fight_with_monster(vector<vector<rooms>> board,status& Monster,status& Play
         cout << " HP of You: "<< Player.h <<" - "<< Monster.d;
         Player.h -= Monster.d;
         cout <<  " = " <<  Player.h << endl;
-        cin.get();
+        enter();
 
         if (Player.h <=0){
           a_sec();
