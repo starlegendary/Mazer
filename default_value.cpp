@@ -25,7 +25,7 @@ void define_items(){
   items["Knife(DMG +10)"] = MakeStatus(0,0,0,10,0);
   items["Sword(DMG +20)"] = MakeStatus(0,0,0,20,0);
   items["Telescope(V +2)"] = MakeStatus(0,0,0,0,2);
-  items["NULL"] = MakeStatus(0,0,0,0,0);
+  items[" NULL"] = MakeStatus(0,0,0,0,0);
 }
 
 void define_player_monster(int S){
