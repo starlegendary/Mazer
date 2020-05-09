@@ -57,7 +57,9 @@ int main(){
       if (!(Player.pos.x == Monster.pos.x &&  Player.pos.y == Monster.pos.y )){
 
           pick_item(board,Player);
-          if(count == 1) 
+          if(count == 1){
+              
+          }
 
           cout << "Intput Command Below (front/ left/ right/ back/ use + item no. ): " <<endl;
           cin >> command;
@@ -96,9 +98,6 @@ int main(){
             Monster.h -= 4;
           }
           
-          if (count == 1){
-              b_sec(" hp is reduced ahhh ");
-          }
           if( !(Monster.pos.x == Player.pos.x && Monster.pos.y == Player.pos.y) ){Visibility(Monster,Player);}
           board[S-1][S-1].type.replace(0,1,"#");
           board[0][0].type.replace(0,1,"#");
