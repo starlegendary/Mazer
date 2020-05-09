@@ -58,7 +58,7 @@ void Visibility(status,status);
 void a_sec();
 void spacing(int time);
 void b_sec(string sth);
-
+position movement(position, position);
 
 
 #endif
