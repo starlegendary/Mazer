@@ -24,7 +24,7 @@ void define_items(){
   items["Poison(HP -10)"] = MakeStatus(0,0,-10,0,0);
   items["Knife(DMG +10)"] = MakeStatus(0,0,0,10,0);
   items["Sword(DMG +20)"] = MakeStatus(0,0,0,20,0);
-  items["Telescope(V +2)"] = MakeStatus(0,0,0,0,2);
+  items["Detector(V +1)"] = MakeStatus(0,0,0,0,1);
   items[" NULL"] = MakeStatus(0,0,0,0,0);
 }
 
