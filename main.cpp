@@ -57,15 +57,19 @@ int main(){
 
 
           if(command == "front"){
+                board[Player.pos.x][Player.pos.y].door.f = 0;
                 move_and_loseHP(Player,front,board[Player.pos.x][Player.pos.y].door.f,0,Player.pos.y);
 
           }else if(command == "back"){
+                board[Player.pos.x][Player.pos.y].door.b = 0;
                 move_and_loseHP(Player,back,board[Player.pos.x][Player.pos.y].door.b,S-1,Player.pos.y);
 
           }else if(command == "left"){
+                board[Player.pos.x][Player.pos.y].door.l = 0;
                 move_and_loseHP(Player,left,board[Player.pos.x][Player.pos.y].door.l,0,Player.pos.x);
 
           }else if(command == "right"){
+                board[Player.pos.x][Player.pos.y].door.r = 0;
                 move_and_loseHP(Player,right,board[Player.pos.x][Player.pos.y].door.r,S-1,Player.pos.x);
 
           }else if(command == "use"){
