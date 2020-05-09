@@ -19,22 +19,26 @@ int main(){
 
     //start game
     cout << "****************************************************" << endl;
-    cout << "*                   Game Started                   *" << endl;
+    cout << "*               Game Project: Mazer                *" << endl;
     cout << "****************************************************" << endl <<endl;
-    cout << "[Some background information here.....] " << endl;
 
     int S,x,y;
     int count = 0;
     
     a_sec();
-    cout << "Input the size of the maze: ";
+    cout << "Choose the difficulties of the game(6-20): ";
     cin >> S;
     while(!(S>=6 && S<=20)){
-      cout << "Input the size of the maze: ";
+      cout << "Choose the difficulties of the game(6-20): ";
       cin >> S;
     }
     a_sec();
-    
+    print("Stars, hide your fires; Let not light see my black and deep desires. -- William Shakespea", true); enter();
+    print("You wake up... there is nothing but darkness.", true); enter();
+    print("'This is the maze.' You hear a voice.", true); enter();
+    print("'Escape or kill the monster' The voice continues.", true); enter();
+    print("'This damn wall must be talking cause man I can hear them.' You think to yourself.", true); enter();
+    print("'You struggle to stand up... Your journey start here.", true); enter();
     vector<vector<rooms>> board(S, vector<rooms>(S));
 
     define_items();
@@ -54,12 +58,7 @@ int main(){
 
           pick_item(board,Player);
           if(count == 1) 
-                print("Stars, hide your fires; Let not light see my black and deep desires. -- William Shakespea", true); enter();
-                print("You wake up... there is nothing but darkness.", true); enter();
-                print("'This is the maze.' You hear a voice.", true); enter();
-                print("'Escape or kill the monster' The voice continues.", true); enter();
-                print("'This damn wall must be talking cause man I can hear them.' You think to yourself.", true); enter();
-                print("'You struggle to stand up... Your journey start here.", true); enter();
+
           cout << "Intput Command Below (front/ left/ right/ back/ use + item no. ): " <<endl;
           cin >> command;
           a_sec(); a_sec();
