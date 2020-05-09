@@ -59,7 +59,7 @@ void move_and_loseHP(status& Player,status command,int t, int limit, int xy){
     move(Player,command);
     Player.h -= t;
   }else{
-    cout << "[WARNING][WARNING]You cannot move ![WARNING][WARNING]" << endl;
+    cout << "You cannot move! HAHAHA!!! You just waste a round man." << endl;
     a_sec();
   }
 }
@@ -91,7 +91,7 @@ void use_item(status& Player,int S){
         a_sec();
       }
   }else{
-    cout << "Item Not Exist !HAHAHA!!! You just waste a round man." << endl;
+    cout << "Item Not Exist! HAHAHA!!! You just waste a round man." << endl;
     a_sec();
   }
 
