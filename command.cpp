@@ -87,7 +87,7 @@ void use_item(status& Player,int S){
         move(Player,items[player_items[nth_item-1]]);
         player_items.erase(player_items.begin()+nth_item-1);
       }else{
-        cout<<player_items[nth_item-1]<<" cannot be used."<<endl;
+        cout<<player_items[nth_item-1]<<" cannot be used. HAHAHA!!! You just waste a round man."<<endl;
         a_sec();
       }
   }else{
