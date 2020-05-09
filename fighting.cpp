@@ -46,8 +46,9 @@ void fight_with_monster(vector<vector<rooms>> board,status& Monster,status& Play
           b_sec("                However...               ");
           b_sec("    Monster takes you back to thr origin.");
 
-          Player.pos.x = S-1;
-          Player.pos.y = S-1;
+          board[Player.pos.x][Player.pos.y].type.replace(0,1," ");
+          define_player_monster(S);
+          board[Player.pos.x][Player.pos.y].type.replace(0,1,"@");
           Print_info(board,S,Player);
           break;
         }
