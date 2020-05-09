@@ -27,8 +27,8 @@ struct doors
 struct rooms
 {
     doors door;
-    string type = "N" ;
-    string item_name ="NULL";
+    string type = " " ;
+    string item_name =" NULL";
     int   pass = 0;
 };
 
