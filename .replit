@@ -1,2 +1,2 @@
 language = "cpp"
-run = "g++ main.cpp ./a.out"
+run = "g++ main.cpp default_value.cpp display.cpp fighting.cpp movement.cpp command.cpp -o a.out && ./a.out"

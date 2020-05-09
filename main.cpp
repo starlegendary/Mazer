@@ -10,14 +10,12 @@ extern status Monster;
 extern map<string, status> items;
 extern vector<string> player_items;
 
-
 int main(){
-
     string command;
-    status front = MakeStatus(0,-1,0,0,0);
-    status back = MakeStatus(0,1,0,0,0);
-    status left = MakeStatus(-1,0,0,0,0);
-    status right = MakeStatus(1,0,0,0,0);
+    status front = MakeStatus( 0,-1,0,0,0);
+    status back  = MakeStatus( 0, 1,0,0,0);
+    status left  = MakeStatus(-1, 0,0,0,0);
+    status right = MakeStatus( 1, 0,0,0,0);
 
     //start game
     cout << "****************************************************" << endl;
@@ -26,7 +24,7 @@ int main(){
     cout << "[Some background information here.....] " << endl;
 
     int S ;
-    cout << "----------------------------------------------------" << endl;
+    a_sec();
     cout << "Input the size of the maze: ";
     cin >> S;
     vector<vector<rooms>> board(S, vector<rooms>(S));
@@ -70,9 +68,7 @@ int main(){
           }
           Visibility(Monster,Player);
           Print_info(board,S,Player);
-
       }else{
-
         fight_with_monster(board,Monster,Player,S);
       }
     }

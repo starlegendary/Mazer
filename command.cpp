@@ -11,18 +11,18 @@ void move(status& player, status& item){
 }
 
 void Print_info(vector<vector<rooms>> board,int S, status& Player){
-  cout << "----------------------------------------------------" << endl;
+  a_sec();
   cout << "Your items: " << endl;
   for(int i = 0; i < player_items.size(); i++)
   {
     cout << i+1 <<" "<< player_items[i] << endl;
   }
-  cout << "----------------------------------------------------" << endl;
+  a_sec();
   cout << "Your Position: ("<< Player.pos.x << "," << Player.pos.y << ")" << endl;
   display(board,Player.pos.x,Player.pos.y,S);
-  cout << "----------------------------------------------------" << endl;
+  a_sec();
   cout<<"Health Point: "<<Player.h<<"; Damage: "<<Player.d<<"; Visibility: "<<Player.v<<endl;
-  cout << "----------------------------------------------------" << endl;
+  a_sec();
 }
 
 void setup_doors_items(vector<vector<rooms>>& board,int S){
@@ -50,7 +50,7 @@ void move_and_loseHP(status& Player,status command,int t, int limit, int xy){
     Player.h -= t;
   }else{
     cout << "[WARNING][WARNING]You cannot move ![WARNING][WARNING]" << endl;
-    cout << "----------------------------------------------------" << endl;
+    a_sec();
   }
 }
 
@@ -73,16 +73,16 @@ void use_item(status& Player,int S){
   if (nth_item <= player_items.size() && nth_item > 0){// check the exist of item
       if(check(Player,player_items[nth_item-1],S)){
         cout<< "You used the item -- "<<player_items[nth_item-1]<<"."<<endl;
-        cout << "----------------------------------------------------" << endl;
+        a_sec();
         move(Player,items[player_items[nth_item-1]]);
         player_items.erase(player_items.begin()+nth_item-1);
       }else{
         cout<<player_items[nth_item-1]<<" cannot be used."<<endl;
-        cout << "----------------------------------------------------" << endl;
+        a_sec();
       }
   }else{
     cout << "[WARNING][WARNING]Item Not Exist ![WARNING][WARNING]" << endl;
-    cout << "----------------------------------------------------" << endl;
+    a_sec();
   }
 
 }
@@ -90,7 +90,7 @@ void use_item(status& Player,int S){
 void pick_item(vector<vector<rooms>>& board,status& Player){
   if( board[Player.pos.x][Player.pos.y].item_name != "NULL"){// pick the item in the current board
     cout <<  "You pick up an item: " << board[Player.pos.x][Player.pos.y].item_name << endl;
-    cout << "----------------------------------------------------" << endl;
+    a_sec();
     player_items.push_back(board[Player.pos.x][Player.pos.y].item_name);
     board[Player.pos.x][Player.pos.y].item_name.replace(0,board[Player.pos.x][Player.pos.y].item_name.length(),"NULL");
     board[Player.pos.x][Player.pos.y].type.replace(0,1,"N");
@@ -105,34 +105,22 @@ int distance(status Monster,status Player){
 }
 
 void Visibility(status Monster,status Player){
-  cout << "----------------------------------------------------" << endl;
+  a_sec();
   if (distance(Monster,Player) <= 4){
-    cout << "|                     ROAR!!!!!                    |" << endl;
-    cout << "----------------------------------------------------" << endl;
-    cout << "|          You hear the roar of Monster!           |" << endl;
-    cout << "----------------------------------------------------" << endl;
-    cout << "|        Be careful !  Monster is nearby !!!       |" << endl;
-    cout << "----------------------------------------------------" << endl;
+    b_sec("ROAR!!!!!");
+    b_sec("You hear the roar of Monster!");
+    b_sec(" Be careful !  Monster is nearby !!!");
   }else if(Player.v >= 2 &&  distance(Monster,Player) <= 16){
-    cout << "|                 Thud...Thud...                   |" << endl;
-    cout << "----------------------------------------------------" << endl;
-    cout << "|          You hear the step of Monster!           |" << endl;
-    cout << "----------------------------------------------------" << endl;
-    cout << "|           Monster is closing to you.             |" << endl;
-    cout << "----------------------------------------------------" << endl;
+    b_sec("          Thud...Thud...            ");
+    b_sec("   You hear the step of Monster!    ");
+    b_sec("    Monster is closing to you.      ");
   }else if(Player.v >=3 && distance(Monster,Player) <= 32){
-    cout << "|                 Fizz...Fizz...                   |" << endl;
-    cout << "----------------------------------------------------" << endl;
-    cout << "|    You hear a little noise from the Monster      |" << endl;
-    cout << "----------------------------------------------------" << endl;
-    cout << "|           Monster is still away from you.        |" << endl;
-    cout << "----------------------------------------------------" << endl;
+    b_sec("          Fizz...Fizz...            ");
+    b_sec("You hear a little noise from the Monster");
+    b_sec("    Monster is still away from you. ");
   }else{
-    cout << "|                       ...                        |" << endl;
-    cout << "----------------------------------------------------" << endl;
-    cout << "|         You hear nothing, it is quiet...         |" << endl;
-    cout << "----------------------------------------------------" << endl;
-    cout << "|         Hope that Monster is not nerby           |" << endl;
-    cout << "----------------------------------------------------" << endl;
+    b_sec("                ...                 ");
+    b_sec("  You hear nothing, it is quiet...  ");
+    b_sec("  Hope that Monster is not nerby    ");
   }
 }

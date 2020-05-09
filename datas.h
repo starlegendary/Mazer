@@ -9,8 +9,6 @@
 #include <cstdlib>
 using namespace std;
 
-//int S = 5;
-
 struct position
 {
     int x,y;
@@ -37,20 +35,29 @@ struct rooms
 void add_door(rooms&,int);
 string random_item(int);
 void move(status& , status&);
+
 void define_items();
 void define_player_monster(int);
+
 status MakeStatus(int, int, int,int,int);
 void Print_info(vector<vector<rooms>>,int, status&);
+void display(vector<vector<rooms>>,int, int,int);
+
 void setup_doors_items(vector<vector<rooms>>& ,int);
 void move_and_loseHP(status& ,status ,int, int, int);
+
 bool check(status,string,int);
+
 void use_item(status&,int);
 void pick_item(vector<vector<rooms>>&,status&);
-void display(vector<vector<rooms>>,int, int,int);
+
 void fight_with_monster(vector<vector<rooms>>,status&,status&,int);
 int distance(status,status);
 void Visibility(status,status);
 
+void a_sec();
+void spacing(int time);
+void b_sec(string sth);
 
 
 
