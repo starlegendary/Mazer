@@ -30,14 +30,14 @@ int main(){
     vector<vector<rooms>> board(S, vector<rooms>(S));
 
     define_items();
-    define_player_monster(S);;
-    board[S-1][S-1].type.replace(0,1,"#");
-    board[0][0].type.replace(0,1,"#");
+    define_player_monster(S);
 
     player_items.clear();
     setup_doors_items(board,S);
-
+    board[Player.pos.x][Player.pos.y].type.replace(0,1,"@");
     Print_info(board,S,Player);
+    board[S-1][S-1].type.replace(0,1,"#");
+    board[0][0].type.replace(0,1,"#");
 
     while(!((Player.h <= 0) || (Player.pos.x == 0 && Player.pos.y == 0)) && Monster.h > 0){
 
@@ -66,6 +66,7 @@ int main(){
                 use_item(Player,S);
           }
           Visibility(Monster,Player);
+          board[Player.pos.x][Player.pos.y].type.replace(0,1,"@");
           Print_info(board,S,Player);
       }else{
         fight_with_monster(board,Monster,Player,S);
