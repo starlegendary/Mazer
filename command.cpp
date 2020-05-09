@@ -37,7 +37,7 @@ void setup_doors_items(vector<vector<rooms>>& board,int S){
       if (!((i == 0 &&  j == 0) || (i == S-1 &&  j == S-1))){
         temp_item = random_item(k);
         k += rand()%100;
-        board[i][j].item_name.replace(0,4,temp_item);
+        board[i][j].item_name.replace(0,5,temp_item);
         board[i][j].type.replace(0,1,temp_item.substr(0,1));
       }
     }
@@ -88,12 +88,12 @@ void use_item(status& Player,int S){
 }
 
 void pick_item(vector<vector<rooms>>& board,status& Player){
-  if( board[Player.pos.x][Player.pos.y].item_name != "NULL"){// pick the item in the current board
+  if( board[Player.pos.x][Player.pos.y].item_name != " NULL"){// pick the item in the current board
     cout <<  "You pick up an item: " << board[Player.pos.x][Player.pos.y].item_name << endl;
     a_sec();
     player_items.push_back(board[Player.pos.x][Player.pos.y].item_name);
-    board[Player.pos.x][Player.pos.y].item_name.replace(0,board[Player.pos.x][Player.pos.y].item_name.length(),"NULL");
-    board[Player.pos.x][Player.pos.y].type.replace(0,1,"N");
+    board[Player.pos.x][Player.pos.y].item_name.replace(0,board[Player.pos.x][Player.pos.y].item_name.length()," NULL");
+    board[Player.pos.x][Player.pos.y].type.replace(0,1," ");
   }
 }
 
