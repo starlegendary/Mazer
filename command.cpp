@@ -9,7 +9,7 @@ void print(string sth, bool okk)
 }
 void enter()
 {
-    cout << "Press Enter to Continue." <<endl;cin.ignore();
+    cout << "******Press Enter to Continue.******" <<endl;cin.ignore();
 }
 
 void move(status& player, status& item){
