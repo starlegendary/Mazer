@@ -27,6 +27,10 @@ int main(){
     a_sec();
     cout << "Input the size of the maze: ";
     cin >> S;
+    while(!(S>=6 && S<=20)){
+      cout << "Input the size of the maze: ";
+      cin >> S;
+    }
     vector<vector<rooms>> board(S, vector<rooms>(S));
 
     define_items();
