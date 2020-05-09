@@ -1,4 +1,4 @@
-# Mazer
+# Mazerss
 *Game Coding Project C++*
 
 ## Team member:
