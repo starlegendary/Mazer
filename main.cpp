@@ -79,7 +79,7 @@ int main(){
           }
 
           srand(time(NULL));
-          for ( int r = rand() % 3 ; r > 0 ; r--){
+          for ( int r = rand() % 2 ; r > 0 ; r--){
             Monster.pos = movement(Monster.pos,Player.pos);
             Monster.h -= 4;
           }
