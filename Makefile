@@ -13,8 +13,8 @@ command.o: command.cpp datas.h
 default_value.o: default_value.cpp datas.h 
   g++ default_value.cpp -c default_value.o
   
-main: main.cpp fighting.o command.o default_value.o datas.h
-  g++ main.cpp fighting.o command.o default_value.o -o main
+main: main.cpp fighting.o command.o default_value.o movement.o display.o datas.h
+  g++ main.cpp fighting.o command.o default_value.o movement.o display.o-o main
   
 clean:
   rm *.o main
